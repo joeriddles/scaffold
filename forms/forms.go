@@ -628,6 +628,7 @@ func (p *processor) askArrayTypeProperty(prop Property, root entry) (any, error)
 
 			val := newObjectEntry(map[string]any{})
 			if _, err := scaffold.addChild(val); err != nil {
+				root.removeChild(scaffold)
 				return nil, err
 			}
 
